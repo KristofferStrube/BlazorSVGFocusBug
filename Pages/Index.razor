@@ -1,0 +1,14 @@
+﻿@page "/"
+
+<svg height="50" width="50">
+    <rect @ref=Rect tabindex="-1" id="rect" x="5" y="5" width="40" height="40" fill="grey"></rect>
+</svg>
+
+@code {
+    protected ElementReference Rect { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await Rect.FocusAsync();
+    }
+}
